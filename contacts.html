@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My gym</title>
+    <script     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBE0NvPErcffgMpeN1GbGRfvZ-3yKlLaP4&map_ids=e8780ff4a49bc9ff&callback=initMap" defer></script>
+    <style type="text/css">
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 400px;
+            /* The height is 400 pixels */
+            width: 100%;
+            /* The width is the width of the web page */
+        }
+    </style>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Uluru
+            const uluru = { lat: 53.8845585, lng: 27.4532868 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: uluru,
+                mapId: 'e8780ff4a49bc9ff'
+            });
+
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+
+        }
+    </script>
+</head>
+<body>
+<h3 style="text-align: center;">Our gym is located here</h3>
+<!--The div element for the map -->
+<div id="map"></div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function doClear(){
+            document.PizzaForm.customer.value = "";
+            document.PizzaForm.address.value = "";
+            document.PizzaForm.city.value = "";
+            document.PizzaForm.state.value = "";
+            document.PizzaForm.zip.value = "";
+            document.PizzaForm.phone.value = "";
+
+            document.PizzaForm.sizes[0].checked = false;
+            document.PizzaForm.sizes[1].checked = false;
+            document.PizzaForm.sizes[2].checked = false;
+
+            document.PizzaForm.toppings[0].checked = false;
+            document.PizzaForm.toppings[1].checked = false;
+            document.PizzaForm.toppings[2].checked = false;
+            document.PizzaForm.toppings[3].checked = false;
+            document.PizzaForm.toppings[4].checked = false;
+            document.PizzaForm.toppings[5].checked = false;
+            return;
+        }
+        function doSubmit(){
+            if(validateText() == false){
+                alert("Required data missing in Step 1");
+                return;
+            }
+            if(validateRadio() == false){
+                alert("Required data missing in Step 2");
+                return;
+            }
+            alert("Your pizza order has been submitted. ");
+            return;
+        }
+        function validateText(){
+            var customer = document.PizzaForm.customer.value;
+            if(customer.length == 0) return false;
+            var address = document.PizzaForm.address.value;
+            if(address.length == 0) return false;
+            var city = document.PizzaForm.city.value;
+            if(city.length == 0) return false;
+            var customer = document.PizzaForm.phone.value;
+            if(customer.length == 0) return false;
+            return true;
+        }
+        function validateRadio(){
+            if(document.PizzaForm.sizes[0].checked) return true;
+            if(document.PizzaForm.sizes[1].checked) return true;
+            if(document.PizzaForm.sizes[2].checked) return true;
+            return false;
+        }
+    </script>
+</head>
+<body>
+<form action="" name="PizzaForm">
+    <h1>The JavaScript Pizza Parlor</h1>
+    <p>
+    <h4>Step 1: Enter your name, address, and phone number:</h4>
+    <font face = "Courier New">
+        Name: &nbsp;&nbsp;&nbsp;<input type="text" name="customer" size="50"><br>
+        Address: <input type="text" name="address" size="50"><br>
+        City: &nbsp;&nbsp;&nbsp;<input type="text" size="15" name="city">
+        State: <input type="text" name="state" size="2" type="TEXT">
+        Zip: <input type="text" name="zip" size="5"><br>
+        Phone: &nbsp;&nbsp;&nbsp;<input type="text" name="phone" size="50"><br>
+    </font>
+    </p>
+    <p>
+    <h4>Step 2: Select the size of pizza you want:</h4>
+    <font face = "Courier New">
+        <input name="sizes" type="radio">Small
+        <input name="sizes" type="radio">Medium
+        <input name="sizes" type="radio">Large <br>
+    </font>
+    </p>
+    <p>
+    <h4>Select the pizza toppings you want:</h4>
+    <font face="Courier New">
+        <input type="checkbox" name="toppings">Pepperoni
+        <input type="checkbox" name="toppings">Canadian Bacon
+        <input type="checkbox" name="toppings">Sausage <br>
+        <input type="checkbox" name="toppings">Mushrooms
+        <input type="checkbox" name="toppings">Pineapple
+        <input type="checkbox" name="toppings">Black Olives <br>
+    </font>
+    </p>
+    <input type="button" value="Submit Order" onClick="doSubmit()">
+    <input type="button" value="Clear Entries" onClick="doClear()">
+</form>
+</body>
+</html>
+</body>
+</html>

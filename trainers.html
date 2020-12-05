@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My gym</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+        .parallax {
+            /* The image used */
+            background-image: url('penguinuhh-8VI6WwEEEHw-unsplash.jpg');
+
+            /* Full height */
+            height: 100%;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+        @media only screen and (max-device-width: 1366px) {
+            .parallax {background-attachment: scroll;
+            }
+        }
+    </style>
+</head>
+<body bgcolor="black">
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="parallax"></div>
+
+<div style="height:200px;background-color: white; opacity: .8; font-size:28px; text-align: center; padding:50px;">
+    We have instituted safe-health practices at all clubs, with plenty of social distancing.
+    MERV-13 Hospital-Grade air filters and HEPA air filtration units with UV lights are installed throughout the clubs,
+    along with hand sanitizing disinfectant stations. Our staff wipe down surfaces in high traffic areas throughout the day.
+
+</div>
+
+<div class="parallax"></div>
+
+</body>
+</html>
+
